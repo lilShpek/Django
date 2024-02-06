@@ -7,7 +7,7 @@ class Command(BaseCommand):
 
 
     def handle(self, *args, **kwargs):
-        client = Client(name='Vladick', email='alexxxx@mail.ru', telenumber='0694783942', address='pyshkin_62', registerdate='01.02.2024')
+        client = Client(name='Alex', email='alexxx@mail.ru', telenumber='0694783942', address='pyshkin_62', registerdate='01.02.2024')
         ...
         client.save()
         self.stdout.write(f'Client created!')
