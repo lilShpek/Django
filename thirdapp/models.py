@@ -44,12 +44,17 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField()
     appenddate = models.DateField(auto_now_add=True)
+    photo = models.ImageField(upload_to='thirdapp/', null=True, blank=True, default=['name'])
+
 
 class Order(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, to_field='name', db_column='client')
     product = models.ForeignKey(Product, on_delete=models.CASCADE, to_field='name', db_column='product')
     fullprice = models.FloatField()
     orderdate = models.DateField(auto_now_add=True)
+
+
+
 
 
 # Доработать магазин
