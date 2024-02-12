@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -21,20 +23,26 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-w0d5mg+q#5as$z%-r%t00xi(c9r^&3ug$ozw#7^6l&g02wot8n'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [
     '192.168.0.37', 
     '127.0.0.1',
+    'dklrsh.pythonanywhere.com'
 ]
 
-
+INTERNAL_IPS = [
+    '127.0.0.1'
+]
 # Application definition
 
 INSTALLED_APPS = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,6 +53,7 @@ INSTALLED_APPS = [
     'secondapp',
     'thirdapp',
     'app4',
+    'debug_toolbar'
 ]
 
 MIDDLEWARE = [
@@ -83,12 +92,19 @@ WSGI_APPLICATION = 'firstdjangoproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dklrsh$default',
+        'USER': 'dklrsh',
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
+        'HOST': 'dklrsh.mysql.pythonanywhere-services.com',
+        'OPTIONS': {
+            'init_command': "SET NAMES 'utf8mb4'; SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
     }
 }
 
-
+# django.db.backends.sqlite3
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -124,6 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

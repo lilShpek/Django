@@ -23,4 +23,5 @@ urlpatterns = [
     path('gen/', include('secondapp.urls')),
     # path('', include('secondapp.urls')),
     path('new/', include('thirdapp.urls')),
+    # path('__debug__/', include('debug_toolbar.urls')),
 ]

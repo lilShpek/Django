@@ -44,7 +44,7 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField()
     appenddate = models.DateField(auto_now_add=True)
-    photo = models.ImageField(upload_to='thirdapp/', null=True, blank=True, default=['name'])
+    photo = models.ImageField(upload_to='thirdapp/', null=True, blank=True, default=['name']) 
 
 
 class Order(models.Model):

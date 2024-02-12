@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author's articles</title>
+</head>
+<body>
+    <ul>
+    {% for article in res %}
+    <li>
+    
+    {% if article.pub_flag %}
+    <a href="{% url 'full_article' article.id %}">{{ article.title }}</a>
+    {% else %}
+    {{ article.title }}
+    {% endif %}
+</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
