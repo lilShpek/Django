@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Product, Category
-from secondapp.models import Author, Comment, Post
+# from secondapp.models import Author, Comment, Post
 # from thirdapp.models import Client, Product, Order
 
 
@@ -48,13 +48,13 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 
-admin.site.register(Author)
-admin.site.register(Post)
-admin.site.register(Comment)
+# admin.site.register(Author)
+# admin.site.register(Post)
+# admin.site.register(Comment)
 # admin.site.register(Client)
 # admin.site.register(Order)
 admin.site.register(Product, ProductAdmin)
-
+admin.site.register(Category)
 
 
 # Проверьте возможность доступа к админке. 

@@ -14,5 +14,5 @@ class Product(models.Model):
     appenddate = models.DateField(auto_now_add=True)
     # photo = models.ImageField(upload_to='thirdapp/', null=True, blank=True, default=['name'])
     
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name 
