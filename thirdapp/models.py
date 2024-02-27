@@ -48,8 +48,8 @@ class Product(models.Model):
 
 
 class Order(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, to_field='name', db_column='client')
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, to_field='name', db_column='product')
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     fullprice = models.FloatField()
     orderdate = models.DateField(auto_now_add=True)
 
