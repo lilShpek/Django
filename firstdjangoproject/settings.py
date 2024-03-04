@@ -34,7 +34,7 @@ CSRF_COOKIE_SECURE = True
 
 ALLOWED_HOSTS = [ 
     '127.0.0.1',
-    'dklrsh2.pythonanywhere.com'
+    'dklrsh3.pythonanywhere.com'
 ]
 
 INTERNAL_IPS = [
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'firstdjangoproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'thirdapp/templates/thirdapp')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
