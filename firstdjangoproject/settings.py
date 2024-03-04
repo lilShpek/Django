@@ -32,10 +32,9 @@ DEBUG = bool(os.environ.get("DEBUG"))
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = [
-    '192.168.0.37', 
+ALLOWED_HOSTS = [ 
     '127.0.0.1',
-    'dklrsh.pythonanywhere.com'
+    'dklrsh2.pythonanywhere.com'
 ]
 
 INTERNAL_IPS = [
